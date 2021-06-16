@@ -9,7 +9,7 @@ import Card from './card'
 import Button from './button'
 
 import vars from '../vars'
-
+//
 const CardGrid = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
