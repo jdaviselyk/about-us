@@ -12,7 +12,7 @@ import vars from '../vars'
 
 const CardGrid = styled.div`
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 1fr 1fr;
   gap: 1.5rem;
   @media (min-width: ${vars.breakpointMedium}) {
     grid-template-columns: 2fr;
@@ -39,9 +39,9 @@ const WhiteCards = ({
   return (
     <Section bg="colorBlack">
       <Container>
-        <CardGrid>
-          {cards.map(
-            ({ title, description, image, name, imageData }, cardIndex) => (
+        {cards.map(
+          ({ title, description, image, name, imageData }, cardIndex) => (
+            <CardGrid>
               <Inner>
                 <Portrait>
                   <GatsbyImage
@@ -53,9 +53,9 @@ const WhiteCards = ({
                 <Name>{name}</Name>
                 <Description>{description && parse(description)}</Description>
               </Inner>
-            )
-          )}
-        </CardGrid>
+            </CardGrid>
+          )
+        )}
       </Container>
     </Section>
   )
@@ -128,6 +128,7 @@ const Title = styled.div`
   text-align: left;
   font-size: ${vars.fontSizeHeading1};
   font-weight: 600;
+  padding: 0.5em;
 `
 
 const Description = styled.div`
@@ -138,6 +139,7 @@ const Description = styled.div`
   justify-content: left;
   text-align: left;
   font-weight: 500;
+  padding: 1em;
 `
 
 export default WhiteCards
